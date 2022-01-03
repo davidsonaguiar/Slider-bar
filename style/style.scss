@@ -95,7 +95,7 @@ main{
             position: relative;
             width: 100%;
 
-            border-radius: 5px;
+            //border-radius: 5px;
 
             display: flex;
             flex-wrap: nowrap;
@@ -109,7 +109,7 @@ main{
             z-index: 0;
             
             & .list-item{
-                min-width: 250px;
+                min-width: calc((900px - 50px) / 3);
                 border-radius: 5px;
 
                 overflow: hidden;

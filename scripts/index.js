@@ -29,15 +29,16 @@ document.getElementById('btn-back').addEventListener('click', () =>{
 
     let widthList = document.getElementById('list').offsetWidth;
     let widthScroll = document.getElementById('list').scrollWidth;
-    let calc = parseInt((widthScroll - widthList)/250)
+    let widthBoxlist = document.getElementById('box-list').offsetWidth;
+    let calc = parseInt((widthScroll - widthList)/widthBoxlist)
 
     index--
 
     if(index < 0){
         index = calc + 1;
-        document.getElementById('list').scroll(index * 250, 0);
+        document.getElementById('list').scroll(index * widthBoxlist, 0);
     }else{
-        document.getElementById('list').scroll(index * 250, 0);
+        document.getElementById('list').scroll(index * widthBoxlist, 0);
     }
 
     console.log(index)
@@ -47,11 +48,12 @@ document.getElementById('btn-forward').addEventListener('click', () =>{
 
     let widthList = document.getElementById('list').offsetWidth;
     let widthScroll = document.getElementById('list').scrollWidth;
-    let calc = parseInt((widthScroll - widthList)/250)
+    let widthBoxlist = document.getElementById('box-list').offsetWidth;
+    let calc = parseInt((widthScroll - widthList)/widthBoxlist)
 
     index++;
     if(index <= calc + 1){
-        document.getElementById('list').scroll(index * 250, 0);
+        document.getElementById('list').scroll(index * widthBoxlist, 0);
     }else{
         document.getElementById('list').scroll(0, 0);
         index = 0;

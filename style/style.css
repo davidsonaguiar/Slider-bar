@@ -93,7 +93,6 @@ main #box-list #btn-forward {
 main #box-list #list {
   position: relative;
   width: 100%;
-  border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +109,7 @@ main #box-list #list {
 }
 
 main #box-list #list .list-item {
-  min-width: 250px;
+  min-width: calc((900px - 50px) / 3);
   border-radius: 5px;
   overflow: hidden;
 }
