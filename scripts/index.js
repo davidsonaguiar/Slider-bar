@@ -26,39 +26,29 @@ films.forEach(item => {
 });
 
 document.getElementById('btn-back').addEventListener('click', () =>{
-
-    let widthList = document.getElementById('list').offsetWidth;
+    let widthBoxList = document.getElementById('box-list').offsetWidth;
     let widthScroll = document.getElementById('list').scrollWidth;
-    let widthBoxlist = document.getElementById('box-list').offsetWidth;
-    let calc = parseInt((widthScroll - widthList)/widthBoxlist)
-
-    index--
-
-    if(index < 0){
-        index = calc + 1;
-        document.getElementById('list').scroll(index * widthBoxlist, 0);
+    
+    if(index < 0 && index < -(widthBoxList / 4)){
+        index = widthScroll - widthBoxList;
     }else{
-        document.getElementById('list').scroll(index * widthBoxlist, 0);
+        index -= widthBoxList / 2;
     }
 
-    console.log(index)
+    document.getElementById('list').scroll(index, 0);
+
 });
 
 document.getElementById('btn-forward').addEventListener('click', () =>{
-
-    let widthList = document.getElementById('list').offsetWidth;
+    let widthBoxList = document.getElementById('box-list').offsetWidth;
     let widthScroll = document.getElementById('list').scrollWidth;
-    let widthBoxlist = document.getElementById('box-list').offsetWidth;
-    let calc = parseInt((widthScroll - widthList)/widthBoxlist)
 
-    index++;
-    if(index <= calc + 1){
-        document.getElementById('list').scroll(index * widthBoxlist, 0);
-    }else{
-        document.getElementById('list').scroll(0, 0);
+    if(index > (widthScroll - widthBoxList) + (widthBoxList / 4)){
         index = 0;
+    }else{
+        index += widthBoxList / 2;
     }
 
-    console.log(index)
-});
+    document.getElementById('list').scroll(index, 0);
 
+});

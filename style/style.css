@@ -43,8 +43,8 @@ img {
 header,
 main {
   width: 100%;
-  min-width: 440px;
-  max-width: 900px;
+  min-width: 320px;
+  max-width: 1000px;
   padding: 10px;
   margin: 0 auto;
 }
@@ -109,13 +109,18 @@ main #box-list #list {
 }
 
 main #box-list #list .list-item {
-  min-width: calc((900px - 50px) / 3);
+  min-width: calc((100% - 30px) / 4.5);
   border-radius: 5px;
   overflow: hidden;
 }
 
 main #box-list #list .list-item .list-item-link {
   overflow: hidden;
+}
+
+main #box-list #list .list-item .list-item-link img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 main #box-list #list .list-item p {
@@ -125,6 +130,24 @@ main #box-list #list .list-item p {
 
 main #box-list #list .list-item p a {
   color: #f9f9f9;
+}
+
+@media (max-width: 1000px) {
+  main #box-list #list .list-item {
+    min-width: calc((100% - 30px) / 3.5);
+  }
+}
+
+@media (max-width: 768px) {
+  main #box-list #list .list-item {
+    min-width: calc((100% - 10px) / 2.5);
+  }
+}
+
+@media (max-width: 600px) {
+  main #box-list #list .list-item {
+    min-width: calc((100% - 10px) / 1.5);
+  }
 }
 
 main #box-list #list .list-item:hover img {

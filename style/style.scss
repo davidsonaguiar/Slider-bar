@@ -41,8 +41,8 @@ img{
 header,
 main{
     width: 100%;
-    min-width: 440px;
-    max-width: 900px;
+    min-width: 320px;
+    max-width: 1000px;
     padding: 10px;
     margin: 0 auto;
 }
@@ -109,13 +109,17 @@ main{
             z-index: 0;
             
             & .list-item{
-                min-width: calc((900px - 50px) / 3);
+                min-width: calc((100% - 30px) / 4.5);
                 border-radius: 5px;
 
                 overflow: hidden;
 
                 & .list-item-link{
                     overflow: hidden;
+
+                    & img{
+                        transition: 0.3s;
+                    }
                 }
 
                 & p{
@@ -125,6 +129,24 @@ main{
                     & a{
                         color: #f9f9f9;
                     }
+                }
+            }
+
+            @media(max-width: 1000px){
+                & .list-item{
+                    min-width: calc((100% - 30px) / 3.5);
+                }
+            }
+
+            @media(max-width: 768px){
+                & .list-item{
+                    min-width: calc((100% - 10px) / 2.5);
+                }
+            }
+
+            @media(max-width: 600px){
+                & .list-item{
+                    min-width: calc((100% - 10px) / 1.5);
                 }
             }
 
@@ -144,3 +166,4 @@ main{
         display: grid;
     }
 }
+
